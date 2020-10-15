@@ -1,0 +1,43 @@
+<%- include("../partials/header") %>
+
+<section id="candidate-1">
+	<div class="candidate__list container">
+		<h1 class="candidate__list--header">Applications</h1>
+		<ul class="candidate__list--body">
+			<% for(let i = 0; i < applications.length; i ++){ %>
+				<li>
+					<a class="candidate-name candidate-name__<%= i %>" href="#"><%= applications[i].appName %></a>
+					<form action="/candidates/<%= applications[i]._id %>?_method=DELETE" method="POST">
+						<button class="delete-application">X</button>
+					</form>
+				</li>
+			<% } %>
+		</ul>
+	</div>
+	<% for(let i = 0; i < applications.length; i ++){ %>
+		<div class="application-container application-container__<%= i %> display--off">
+			<div class="application">
+				<h2 class="application__name"><%= applications[i].appName %></h2>
+				<ul class="application__body">
+					<li>Animal: <%= applications[i].animalName %></li>
+					<li>email: <%= applications[i].email %></li>
+					<li>Phone: <%= applications[i].phone %></li>
+					<li>Type of Home: <%= applications[i].home %></li>
+					<li>Address: <%= applications[i].address %></li>
+					<li>About: <%= applications[i].about %></li>
+				</ul>
+				<div class="application__buttons">
+					<button class="btn btn-favorite">Favorite</button>
+					<form action="/candidates/<%= applications[i]._id %>?_method=DELETE" method="POST">
+						<button class="btn btn-main">Delete</button>
+					</form>
+				</div>
+				<a class="application__exit"><i class="fas fa-times"></i><a>
+			</div>
+		</div>
+	<% } %>
+</section>
+
+<script src="/candidate_script.js"></script>
+
+<%- include("../partials/footer") %>

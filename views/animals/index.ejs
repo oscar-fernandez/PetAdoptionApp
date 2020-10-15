@@ -1,0 +1,39 @@
+<%- include("../partials/header") %>
+
+<header id="index-header">
+	<div class="container">
+		<div class="header-content">
+			<h1>Welcome to Adoptable Pets</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, doloribus laboriosam. Minus repellat quibusdam quasi.</p>
+			<a href="#animal-thumbnails" class="btn btn-main my-2">View Pets</a>
+		</div>
+	</div>
+</header>
+
+<section id="animal-thumbnails" class="my-2">
+	<div class="container">
+		<% if(currentUser){ %>
+		<div class="add-animal">
+			<a href="/animals/new" class="btn btn-main">Add New Animal</a>
+		</div>
+		<% } %>
+		<div class="animal-grid my-1">
+			<% animals.forEach((animal)=> { %>
+			<div class="card-container">
+				<div class="card">
+					<a href="/animals/<%= animal._id %>">
+						<img src="<%= animal.image %>" alt="">
+						<div class="card-text">
+							<h4 class="animal-name"><%= animal.name %></h4>
+							<p class="animal-info"><%= animal.breed %></p>
+							<p class="animal-weight">Young &bull; <%= animal.weight %> lbs</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<% }); %>
+		</div>
+	</div>
+</section>
+
+<%- include("../partials/footer") %>

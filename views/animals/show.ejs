@@ -1,0 +1,80 @@
+<%- include("../partials/header") %>
+
+<section id="show-1">
+	<div class="show-1-grid container">
+		<div class="show-1-grid__description">
+			<ul>
+				<li><%= animal.name %></li>
+				<li>Sex: <%= animal.sex %></li>
+				<li>Age: <%= animal.age %></li>
+				<li>Breed: <%= animal.breed %></li>
+				<li>Weight: <%= animal.weight %></li>
+			</ul>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nulla adipisci harum velit unde modi hic illum perspiciatis iure, fugiat deserunt animi alias nemo, rerum provident, quas non tempora perferendis.</p>
+			<div class="btn-container">
+				<a href="#show-2" class="btn btn-green">Apply for Adoption</a>
+			</div>
+		</div>
+		<div class="show-1-grid__image">
+			<img src="<%= animal.image %>" alt="">
+		</div>
+	</div>
+	<% if(currentUser){ %>
+		<div class="options container">
+			<a class="btn-edit" href="/animals/<%= animal._id %>/edit">Edit</a>
+			<form action="/animals/<%= animal._id %>?_method=DELETE" method="POST"><button class="btn-delete">Delete</button></form>
+		</div>
+	<% } %>
+</section>
+
+<section id="show-2">
+	<div class="show-2__form container">
+		<h2 class="form-header">Adoption Application</h2>
+		<form class="form-body" action="/candidates" method="POST">
+			<div class="form-line">
+				<label for="animalName">Animal Name:</label>
+				<input class="form-input" type="text" name=animalName value="<%= animal.name %>" readonly>
+			</div>
+			<div class="form-line">
+				<label for="firstName">First Name:</label>
+				<input class="form-input" type="text" name="firstName" placeholder="first name">
+			</div>
+			<div class="form-line">
+				<label for="lastName">Last Name:</label>
+				<input class="form-input" type="text" name="lastName" placeholder="last name">
+			</div>
+			<div class="form-line">
+				<label for="email">e-mail:</label>
+					<input class="form-input" type="text" name="email" placeholder="email">
+			</div>
+			<div class="form-line">
+				<label for="phone">Phone Number:</label>
+				<input class="form-input" type="text" name="phone" placeholder="phone">
+			</div>
+			<div class="form-line">
+				<label for="home">Type of Home:</label>
+				<div class="form-line radio">
+					<input type="radio" id="house" name="home" value="house">
+					<label for="house">House</label>
+					<input type="radio" id="apartment" name="home" value="apartment">
+					<label for="apartment">Apartment/Condo</label>
+					<input type="radio" id="apartment" name="home" value="other">
+					<label for="other">Other</label>
+				</div>
+			</div>
+			<div class="form-line">
+				<label for="address">Address:</label>
+				<input class="form-input" type="text" name="address" placeholder="address">
+			</div>
+			<div class="form-line">
+				<label for="aboutYou">About You:</label>
+				<textarea class="form-input" rows="5" name="aboutYou" placeholder="about you"></textarea>
+			</div>
+			<div class="form-line submit-container">
+				<button class="btn btn-green">Submit</button>
+			</div>
+		</form>
+	</div>
+</section>
+
+<%- include("../partials/footer") %>

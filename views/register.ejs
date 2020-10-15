@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<section id="login-1">
+	<form class="page-form " action="/register" method="POST">
+		<h1 class="page-form__title">Register</h1>
+		<div class="page-form__line">
+			<label for="username" class="page-form__line--label">Username</label>
+			<input type="text" name="username" class="page-form__line--input">
+		</div>
+		<div class="page-form__line">
+			<label for="password" class="page-form__line--label">Password</label>
+			<input type="password" name="password" class="page-form__line--input">
+		</div>
+		<div class="page-form__line">
+			<button class="btn btn-green">Sign Up</button>
+		</div>
+	</form>
+</section>
+
+<%- include("partials/footer") %>

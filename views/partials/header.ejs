@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptable Pets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7574915927.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/dist/main.css">
+</head>
+<body >
+    <nav id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="flex-nav-small">
+                    <a href="/animals" class="logo">Adoptable Pets</a>
+                    <label for="hamburger-toggle">&#9776;</label>
+                    <input type="checkbox" id="hamburger-toggle" class="toggle">
+                </div>
+                <ul class="navbar-links">
+                    <li><a href="/animals">Animals</a></li>
+					<li><a href="/about">About Us</a></li>
+					<% if(!currentUser){ %>
+                    <li><a href="/register">Register</a></li>
+					<li><a href="/login">Log In</a></li>
+					<% } %>	
+					<% if(currentUser){ %>
+					<li><a href="#">Signed in as <%= currentUser.username %></a></li>
+					<li><a href="/candidates">Applicants</a></li>
+					<li><a href="/logout">Logout</a></li>
+					<% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
