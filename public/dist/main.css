@@ -695,7 +695,10 @@ img {
 }
 
 @media (max-width: 800px) {
-  #navbar .navbar-header ul li {
+  #navbar {
+    font-size: 1rem;
+  }
+  #navbar .navbar-header .navbar-links li {
     padding-left: .8rem;
   }
   #animal-thumbnails .animal-grid {
@@ -771,11 +774,14 @@ img {
     background: #e6e6fa;
     border-bottom: 1px solid #f5f0f7;
   }
-  #animal-thumbnails .animal-grid {
+  #animal-thumbnails .container {
+    padding: 0 1.5rem;
+  }
+  #animal-thumbnails .container .animal-grid {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
-  #animal-thumbnails .animal-grid .card-container .card {
+  #animal-thumbnails .container .animal-grid .card-container .card {
     max-width: 239px;
     margin-bottom: 2rem;
   }
