@@ -21,7 +21,8 @@ const applicationRoutes = require("./routes/applications"),
 	    indexRoutes       = require("./routes/index");
 
 
-//seedDB();
+// seedDB();
+//  
 //serves css stylesheets and images
 app.use(express.static(path.join(__dirname, 'public')));
 //mongoose settings to resolve deprection warnings
