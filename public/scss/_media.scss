@@ -24,6 +24,12 @@
         .show-1-grid {
             display: flex;
             flex-direction: column;
+            align-items: center;
+
+            &__description {
+                margin-bottom: 2rem;
+                max-width: 400px;
+            }
         }
 
         .container {
@@ -158,19 +164,19 @@
             }
         }
     }
+
+    #show-1 {
+        .container {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
 }
 
 @media (max-width: 625px) {
     #animal-thumbnails {        
         .animal-grid {
             grid-template-columns: 1fr;
-        }
-    }
-    #show-1 {
-        .btn-container {
-            .btn {
-                font-size: 1rem;
-            }
         }
     }
 }
