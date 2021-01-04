@@ -782,6 +782,9 @@ img {
     background: #e6e6fa;
     border-bottom: 1px solid #f5f0f7;
   }
+  #about-1 {
+    padding: 0 1.5rem;
+  }
   #animal-thumbnails .container {
     padding: 0 1.5rem;
   }
